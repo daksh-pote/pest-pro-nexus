@@ -1,40 +1,12 @@
-import { useState } from "react";
-import { Sidebar } from "@/components/Sidebar";
-import { Dashboard } from "@/components/Dashboard";
-import { CustomerList } from "@/components/CustomerList";
-import { AppointmentList } from "@/components/AppointmentList";
-import { TreatmentList } from "@/components/TreatmentList";
-import { Reports } from "@/components/Reports";
-import { Settings } from "@/components/Settings";
+// Update this page (the content is just a fallback if you fail to update the page)
 
 const Index = () => {
-  const [activeSection, setActiveSection] = useState("dashboard");
-
-  const renderContent = () => {
-    switch (activeSection) {
-      case "dashboard":
-        return <Dashboard />;
-      case "customers":
-        return <CustomerList />;
-      case "appointments":
-        return <AppointmentList />;
-      case "treatments":
-        return <TreatmentList />;
-      case "reports":
-        return <Reports />;
-      case "settings":
-        return <Settings />;
-      default:
-        return <Dashboard />;
-    }
-  };
-
   return (
-    <div className="flex h-screen bg-background">
-      <Sidebar activeSection={activeSection} onSectionChange={setActiveSection} />
-      <main className="flex-1 overflow-y-auto">
-        {renderContent()}
-      </main>
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
+        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+      </div>
     </div>
   );
 };
