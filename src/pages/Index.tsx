@@ -3,6 +3,9 @@ import { Sidebar } from "@/components/Sidebar";
 import { Dashboard } from "@/components/Dashboard";
 import { CustomerList } from "@/components/CustomerList";
 import { AppointmentList } from "@/components/AppointmentList";
+import { TreatmentList } from "@/components/TreatmentList";
+import { Reports } from "@/components/Reports";
+import { Settings } from "@/components/Settings";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("dashboard");
@@ -16,26 +19,11 @@ const Index = () => {
       case "appointments":
         return <AppointmentList />;
       case "treatments":
-        return (
-          <div className="p-6">
-            <h1 className="text-3xl font-bold">Treatments</h1>
-            <p className="text-muted-foreground">Treatment tracking coming soon...</p>
-          </div>
-        );
+        return <TreatmentList />;
       case "reports":
-        return (
-          <div className="p-6">
-            <h1 className="text-3xl font-bold">Reports</h1>
-            <p className="text-muted-foreground">Reporting dashboard coming soon...</p>
-          </div>
-        );
+        return <Reports />;
       case "settings":
-        return (
-          <div className="p-6">
-            <h1 className="text-3xl font-bold">Settings</h1>
-            <p className="text-muted-foreground">System settings coming soon...</p>
-          </div>
-        );
+        return <Settings />;
       default:
         return <Dashboard />;
     }
